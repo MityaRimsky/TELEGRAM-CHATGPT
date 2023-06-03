@@ -5,10 +5,13 @@ import config from 'config'
 const bot = new Telegraf(config.get('TELEGRAM_TOKEN'))
 
 bot.on(message('voice'), async (ctx) => {
-    await ctx.reply(JSON.stringify(ctx.message.voice, null, 2))
+  try {
+    const link = await ctx.telegram.getFileLink(ctx.message.voice.file_id)
+    await ctx.reply(JSON.stringify(link, null, 2))
+  } catch (e) {
+    console.log('Erorr while voice messege', e.message) 
+  } 
 })
-
-
 
 bot.command('start', async (ctx) => {
     await ctx.reply(JSON.stringify(ctx.message, null, 2))
