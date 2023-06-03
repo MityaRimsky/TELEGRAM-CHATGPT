@@ -1,6 +1,7 @@
-import { Telegraf } from 'telegraf'
+import { Telegraf, Telegram } from 'telegraf'
+import config from 'config'
 
-const bot = new Telegraf
+const bot = new Telegraf(config.get('TELEGRAM_TOKEN'))
 
 bot.launch()
 
