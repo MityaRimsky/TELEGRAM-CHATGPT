@@ -30,4 +30,4 @@ class OggConverter {
   }
 }
 
-export const ogg = OggConverter()
+export const ogg = new OggConverter()
