@@ -17,6 +17,7 @@ bot.on(message('voice'), async (ctx) => {
 
     const text = await openai.transcription(mp3Path)
     // const response = await openai.chat(text)
+    await ctx.reply(code(`Ваш запрос: ${text}`))
 
     await ctx.reply(text)
   } catch (e) {
