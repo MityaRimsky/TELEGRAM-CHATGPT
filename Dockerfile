@@ -1,0 +1,13 @@
+FROM node:16-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm ci
+
+ENV PORT=3000
+
+EXPOSE $port
+
+CMD ["npm", "start"]
