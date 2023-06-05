@@ -4,7 +4,7 @@ import { createReadStream } from 'fs'
 
 class OpenAI {
   roles = {
-    ASSISTENT: 'assistent',
+    ASSISTANT: 'assistant',
     USER: 'user',
     SYSTEM: 'system',
   }
